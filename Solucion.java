@@ -7,7 +7,8 @@ public class Solucion {
     private int fuerzaTrabajoTotal;
 
     public Solucion(){
-        subgrupo= new ArrayList<Empleado>();
+        this.subgrupo= new ArrayList<Empleado>();
+        this.fuerzaTrabajoTotal=0;
     }
 
     public void agregarEmpleado(Empleado empleado){
@@ -18,6 +19,10 @@ public class Solucion {
     public ArrayList<Empleado> getSubgrupo(){
         ArrayList<Empleado>aux= new ArrayList<Empleado>(subgrupo);
         return aux;
+    }
+
+    public void quitarEmpleado(int pos){
+        fuerzaTrabajoTotal-=this.subgrupo.remove(pos).getFuerzaTrabajo();
     }
 
     public int getFuerzaTrabajoTotal(){

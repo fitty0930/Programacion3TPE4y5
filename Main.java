@@ -77,11 +77,15 @@ public class Main {
         for(int i=0; i<entrada1.length; i++){
             ingreso.add(entrada1[i]);
         }
-        ArrayList<Solucion> solucion= empresa.formarGruposGreedy(ingreso);
-        System.out.println("solucion 1 fuerza trabajo total "+solucion.get(0).getFuerzaTrabajoTotal());
-        System.out.println("solucion 1 cantidad de empleados "+solucion.get(0).getSubgrupo().size());
-        System.out.println("solucion 2 fuerza trabajo total "+solucion.get(1).getFuerzaTrabajoTotal());
-        System.out.println("solucion 2 cantidad de empleados "+solucion.get(1).getSubgrupo().size());
+//        ArrayList<Solucion> solucion= empresa.formarGruposGreedy(ingreso);
+        ArrayList<Solucion> solucion= empresa.formarGruposBacktracking(ingreso);
+        if(!solucion.isEmpty()){
+            System.out.println("solucion 1 fuerza trabajo total "+solucion.get(0).getFuerzaTrabajoTotal());
+            System.out.println("solucion 1 cantidad de empleados "+solucion.get(0).getSubgrupo().size());
+            System.out.println("solucion 2 fuerza trabajo total "+solucion.get(1).getFuerzaTrabajoTotal());
+            System.out.println("solucion 2 cantidad de empleados "+solucion.get(1).getSubgrupo().size());
+        }
+
 
 
 

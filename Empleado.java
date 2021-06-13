@@ -8,12 +8,14 @@ public class Empleado implements Comparable<Empleado> {
     private String apellido;
     private int edad;
     private int fuerzaTrabajo;
+    private boolean ingresado;
 
     public Empleado(String nombre, String apellido, int edad, int fuerzaTrabajo){
         this.nombre=nombre;
         this.apellido=apellido;
         this.edad=edad;
         this.fuerzaTrabajo=fuerzaTrabajo;
+        this.ingresado=false;
     }
 
     public String getNombre() {
@@ -48,6 +50,13 @@ public class Empleado implements Comparable<Empleado> {
         this.fuerzaTrabajo = fuerzaTrabajo;
     }
 
+    public void setIngresado(boolean a){
+        this.ingresado=a;
+    }
+
+    public boolean getIngresado(){
+        return ingresado;
+    }
 
     @Override
     public int compareTo(Empleado empleado) {
