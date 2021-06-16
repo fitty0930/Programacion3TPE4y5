@@ -64,25 +64,27 @@ public class Empresa {
             //aca encontre una solucion
             if (Math.abs(parcial.get(0).getFuerzaTrabajoTotal() - parcial.get(1).getFuerzaTrabajoTotal()) < anteriorDif) {
                 this.anteriorDif = Math.abs(parcial.get(0).getFuerzaTrabajoTotal() - parcial.get(1).getFuerzaTrabajoTotal());
-                System.out.println(anteriorDif);
-                System.out.println(parcial.get(0).getFuerzaTrabajoTotal());
-                System.out.println(parcial.get(1).getFuerzaTrabajoTotal());
+
                 // guardar la solucion
                 // ESTO ANDA MAL EL RESTO ANDA
-                ArrayList<Solucion> parcialito= new ArrayList<Solucion>(); // COPIAR LISTA DE EMPLEADOS DE LA SOLUCION
+                ArrayList<Solucion> parcialito= new ArrayList<>(); // COPIAR LISTA DE EMPLEADOS DE LA SOLUCION
                 Solucion solucion1= new Solucion();
-                for(int i=0; i<parcial.get(0).getSubgrupo().size();i++){
+
+                for(int i=0; i<parcial.get(0).getSubgrupo().size(); i++){
                     solucion1.agregarEmpleado(parcial.get(0).getSubgrupo().get(i));
                 }
 
                 Solucion solucion2 = new Solucion();
-                for(int i=0; i<parcial.get(1).getSubgrupo().size();i++){
-                    solucion1.agregarEmpleado(parcial.get(1).getSubgrupo().get(i));
+                for(int i=0; i<parcial.get(1).getSubgrupo().size(); i++){
+                    solucion2.agregarEmpleado(parcial.get(1).getSubgrupo().get(i));
                 }
+
+
                 parcialito.add(solucion1);
                 parcialito.add(solucion2);
 
                 this.retornobacktracking = parcialito;
+
             }
         } else {
             // PROBAR METERLO EN EL 1RO Y SI NO EN EL 2DO
