@@ -1,7 +1,5 @@
 package ProgramacionIII.entregable4y5;
 
-import ProgramacionIII.tp5.NumeroSCJ;
-
 public class Empleado implements Comparable<Empleado> {
 
     private String nombre;
